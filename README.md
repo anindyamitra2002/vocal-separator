@@ -12,6 +12,42 @@ A FastAPI server for high-quality vocal separation using [Demucs](https://github
 
 ---
 
+## Running on Lightning Studio (Recommended for Free GPU)
+
+[Lightning Studio](https://lightning.ai/studio) is a free cloud platform that provides instant access to GPUs for ML and audio projects. You can run this server on Lightning Studio for free GPU acceleration, no setup required!
+
+**Steps:**
+1. **Sign up and launch a workspace:**
+   - Go to [lightning.ai/studio](https://lightning.ai/studio) and sign in with your GitHub or email.
+   - Start a new workspace with GPU enabled (choose a template or blank workspace).
+2. **Clone this repository:**
+   ```sh
+   git clone <your-repo-url>
+   cd vocal-separator
+   ```
+3. **(Option 1) Run with Docker:**
+   ```sh
+   docker build -t vocal-separator .
+   docker run -p 8000:8000 vocal-separator
+   ```
+   _or_
+   **(Option 2) Run with Python:**
+   ```sh
+   python -m venv venv
+   source venv/bin/activate
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   pip install --user -U demucs
+   python server.py
+   ```
+4. **Access the server:**
+   - Use the Lightning Studio web interface to open the forwarded port (usually 8000).
+   - Test with `/health` or `/predict` as described below.
+
+_**Tip:** Lightning Studio is the easiest way to get free GPU for this project!_
+
+---
+
 ## Requirements
 - **Docker** (recommended for deployment)
 - Or, for manual install:
