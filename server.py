@@ -126,5 +126,5 @@ class AudioVocalSeparatorAPI(ls.LitAPI):
 
 if __name__ == "__main__":
     api = AudioVocalSeparatorAPI()
-    server = ls.LitServer(api)
+    server = ls.LitServer(api, accelerator='cuda', devices=1)
     server.run(port=8000)
