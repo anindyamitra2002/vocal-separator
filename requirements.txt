@@ -1,7 +1,3 @@
-fastapi[standard]
-uvicorn
-loguru
-pydantic
-python-multipart
-# Demucs and its dependencies
-# Demucs is installed via pip, but ffmpeg must be installed via apt in Docker 
+litserve
+soundfile
+demucs
