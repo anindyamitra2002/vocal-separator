@@ -26,4 +26,4 @@ COPY --chown=user:user . .
 
 EXPOSE 8000
 
-CMD ["python", "-m", "uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000"]   
+CMD ["fastapi", "run", "server.py", "--host", "0.0.0.0", "--port", "8000"]   
